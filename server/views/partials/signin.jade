@@ -1,0 +1,16 @@
+form(name ="signInForm" ng-submit="signIn()" novalidate)
+   div.form-group
+      input(type="text" name="name" placeholder="Name" class="form-control" ng-model="user.name" ng-required="true" ng-pattern="/^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$/")
+      div(ng-show="addEditUser.name.$invalid")
+         p(ng-show="addEditUser.name.$error.required && !addEditUser.name.$pristine" class="help-block") Name is required.
+         p(ng-show="addEditUser.name.$error.pattern && !addEditUser.name.$pristine" class="help-block") Name is digits and letters.
+   div.form-group
+      input(type="email" name="email" placeholder="Email" class="form-control" ng-model="user.email" ng-required="true")
+      div(ng-show="signInForm.email.$invalid")
+         p(ng-show="signInForm.email.$invalid && !signInForm.email.$pristine" class="help-block") Email is required
+   div.form-group
+      input(type="password" name="password" placeholder="Password" class="form-control" ng-model="user.password" ng-required="true" ng-minlength="4")
+      div(ng-show="signInForm.password.$invalid")
+         p(ng-show="signInForm.password.$invalid && !signInForm.password.$pristine" class="help-block") password is required
+   button(type="submit" class="btn btn-primary" ng-disabled="signInForm.$invalid") Sign In
+

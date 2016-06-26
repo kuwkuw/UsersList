@@ -1,0 +1,22 @@
+div
+   div
+      a(href="" ng-click="logOut()") Log Out
+   div
+      a(href="/#/addEditUser") Add New User
+   table.table
+      thead
+         tr
+            th Name
+            th Email
+            th Age
+            th
+            th
+      tbody
+         tr(ng-repeat='user in users')
+            td {{user.name}}
+            td {{user.email}}
+            td {{user.age}}
+            td
+               a(href="/#/addEditUser/{{user.id}}") Edit
+            td
+               a(href="" ng-click="deleteUser(user.id)") Delete

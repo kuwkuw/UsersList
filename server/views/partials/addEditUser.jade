@@ -1,0 +1,13 @@
+form(name ="addEditUser" ng-submit="addEditUserSubmit()" novalidate)
+   div.form-group
+      input(type="text" name="name" placeholder="Name" class="form-control" ng-model="user.name" ng-required="true" ng-pattern="/^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$/")
+      div(ng-show="addEditUser.name.$invalid")
+         p(ng-show="addEditUser.name.$error.required && !addEditUser.name.$pristine" class="help-block") Name is required.
+         p(ng-show="addEditUser.name.$error.pattern && !addEditUser.name.$pristine" class="help-block") Name is digits and letters.
+   div.form-group
+      input(type="email" name="email" placeholder="Email" class="form-control" ng-model="user.email" ng-required="true")
+      div(ng-show="addEditUser.email.$invalid")
+         p(ng-show="addEditUser.email.$invalid && !addEditUser.email.$pristine" class="help-block") Email is required
+   div.form-group
+      input(type="number" name="age" placeholder="Age" class="form-control" ng-model="user.age" ng-required="true" ng-maxlength="30")
+   button(type="submit" class="btn btn-primary" ng-disabled="addEditUser.$invalid") Submit

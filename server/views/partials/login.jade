@@ -1,0 +1,13 @@
+form(name ="logInForm" ng-submit="logIn()" novalidate)
+   div {{msg}}
+   div.form-group
+      input(type="email" name="email" placeholder="Email" class="form-control" ng-model="user.email" ng-required="true")
+      div(ng-show="logInForm.email.$invalid")
+         p(ng-show="logInForm.email.$invalid && !logInForm.email.$pristine" class="help-block") Email is required
+   div.form-group
+      input(type="password" name="password" placeholder="Password" class="form-control" ng-model="user.password" ng-required="true" ng-minlength="4")
+      div(ng-show="logInForm.password.$invalid")
+         p(ng-show="logInForm.password.$invalid && !logInForm.password.$pristine" class="help-block") Email is required
+   button(type="submit" class="btn btn-primary" ng-disabled="logInForm.$invalid") Log In
+   a(href="/#/signin") Sign In
+

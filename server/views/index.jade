@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  div.container(ng-app="app")
+    h1= title
+    p Welcome to #{title}
+    div(ng-view)
+  script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js")
+  script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js")
+  script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-cookies.min.js")
+  script(src="js/app/app.js")
+  script(src="js/app/services/usersHttp.service.js")
+  script(src="js/app/services/authHttp.service.js")
+  script(src="js/app/services/auth.service.js")
+  script(src="js/app/services/httpHandler.js")
+  script(src="js/app/controllers/users.controller.js")
+  script(src="js/app/controllers/login.controller.js")
+  script(src="js/app/controllers/signin.controller.js")
+  script(src="js/app/controllers/addEditUser.controller.js")
+
+
